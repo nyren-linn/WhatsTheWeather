@@ -16,6 +16,7 @@ new Vue({
             reports:result.timeSeries
           }
           this.forecasts.push(obj)
+          
       })
     }
   }
