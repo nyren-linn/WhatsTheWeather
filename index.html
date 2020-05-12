@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Grupparbete</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+    </head>
+    <body>
+        <div id="app">
+            <li v-for="cast in forecasts">
+                {{cast.name}}
+                {{cast.reports[0].parameters[11].values[0]}}C
+            </li>
+          </div>
+        <div class="weather-container">
+            <img class="icon">
+            <p class="weather"></p>
+            <p class="temp"> </p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
