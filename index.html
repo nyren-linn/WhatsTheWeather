@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Grupparbete</title>
+        <title>WhatsTheWeather</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
@@ -9,10 +9,13 @@
         
     </head>
     <body>
+        <h1>What's The Weather?</h1>
         <div id="app">
             <li v-for="cast in forecasts">
                 {{cast.name}}
-                {{cast.reports[0].parameters[11].values[0]}}C
+                Degrees: {{cast.reports[0].parameters[11].values[0]}}C,
+                Wind speed: {{cast.reports[0].parameters[17].values[0]}}m/s,
+                Category: {{cast.reports[0].parameters[18].values[0]}}
             </li>
           </div>
         <div class="weather-container">
