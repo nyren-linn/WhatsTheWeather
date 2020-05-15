@@ -1,18 +1,49 @@
-new Vue({
-  el: '#app',
-  created(){
-    for(let i=0; i<this.pos.length; i++){
-      var url = "https://www.smhi.se/tendayforecast/images/WPT-icons/weathersymbols/80x60/day/" + ({{cast.reports[0].parameters[18].values[0]}}) + ".png?v=1550503846134&proxy=wpt-abc";
-      fetch(url)
-      .then(response => response.json())
-      .then(result => {
-          let obj={
-            name:this.pos[i].name,
-            reports:result.timeSeries
-          }
-          this.forecasts.push(obj)
-          
-      })
-    }
-  }
+Vue.component('dropdown', {
+	template: `
+		<div>
+			<button @click='toggleShow' class='anchor'>Select an Instrument</button>
+			<div v-if='showMenu' class='menu'>
+				<div class='menu-item' v-for='item in this.items' @click='itemClicked(item)'>{{item}}</div>
+			</div>
+		</div>
+	`,
+	data: function() {
+		return {
+			showMenu: false
+		}
+	},
+	props: {
+		onClick: 'function',
+		items: {
+			type: 'Object',
+			default: []
+		}
+	},
+	methods: {
+		toggleShow: function() {
+			this.showMenu = !this.showMenu;
+		},
+		itemClicked: function(item) {
+			this.toggleShow();
+			this.onClick(item);
+		}
+	}
+})
+
+const app = new Vue({
+	el: '#app2',
+	data: {
+		activeInstrument: 'Piano',
+		instruments: [
+			'Piano',
+			'Acoustic Guitar',
+			'Drums',
+			'Trumpet'
+		]
+	},
+	methods: {
+		changeInstrument: function(instrument) {
+			this.activeInstrument = instrument;
+		}
+	}
 })
