@@ -2,8 +2,10 @@ new Vue({
   el: '#app',
   data: {
     forecasts:[],
+    hourForecasts:[0,1,2,3,5,6,7,8,9,10,11,12], //sätta 0-70
     pos:[{name: "Göteborg", lng:16.158, lat:58.5812}, {name:"Stockholm", lng:18.0649, lat:59.33258}],
     selected: null
+
   },
   created(){
     for(let i=0; i<this.pos.length; i++){
@@ -25,5 +27,6 @@ new Vue({
       let url = "https://www.smhi.se/tendayforecast/images/WPT-icons/weathersymbols/80x60/day/" + pet +".png?v=1550503846134&proxy=wpt-abc"
       return url
     }
+    
   }
 })

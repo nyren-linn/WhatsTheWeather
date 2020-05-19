@@ -18,6 +18,18 @@
             </select>
             <br>
             <strong>{{selected.name}}</strong>
+            <div v-for="forecast in hourForecasts" :value="forecast">
+                <br>
+                {{selected.reports[forecast].validTime}}
+                <br>
+                Degrees: {{selected.reports[forecast].parameters[11].values[0]}} C
+                <br>
+                Wind speed: {{selected.reports[forecast].parameters[17].values[0]}} m/s
+                <br>
+                Precipitation: {{selected.reports[forecast].parameters[3].values[0]}} mm/h
+                <br>
+                <img :src="getImgUrl(selected.reports[forecast].parameters[18].values[0])" v-bind:alt="selected.reports[forecast].parameters[18].values[0]">
+            </div>
             <br>
             {{selected.reports[0].validTime}}
             <br>
