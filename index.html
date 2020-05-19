@@ -13,22 +13,31 @@
 
         <div id="app">
             <select v-model="selected">
-                        <option value="">Please select one</option>
+                        <option value="">Select a city</option>
                         <option v-for="cast in forecasts" :value="cast">{{cast.name}}</option>
             </select>
             <br>
             <strong>{{selected.name}}</strong>
             <div v-for="forecast in hourForecasts" :value="forecast">
                 <br>
+                <img :src="getImgUrl(selected.reports[forecast].parameters[18].values[0])" v-bind:alt="selected.reports[forecast].parameters[18].values[0]">
+                <br>
                 <strong>{{selected.reports[forecast].validTime}}</strong>
                 <br>
-                Degrees: {{selected.reports[forecast].parameters[11].values[0]}} C
+                
+                <table style="width:100%">
+                    <tr>
+                        <th>Degrees</th>
+                        <th>Wind speed</th>
+                        <th>Precipitation</th>
+                    </tr>
+                    <tr>
+                        <td>{{selected.reports[forecast].parameters[11].values[0]}} C</td>
+                        <td>{{selected.reports[forecast].parameters[17].values[0]}} m/s</td>
+                        <td>{{selected.reports[forecast].parameters[3].values[0]}} mm/h</td>
+                    </tr>
+                </table>
                 <br>
-                Wind speed: {{selected.reports[forecast].parameters[17].values[0]}} m/s
-                <br>
-                Precipitation: {{selected.reports[forecast].parameters[3].values[0]}} mm/h
-                <br>
-                <img :src="getImgUrl(selected.reports[forecast].parameters[18].values[0])" v-bind:alt="selected.reports[forecast].parameters[18].values[0]">
             </div>
           </div>
           <script src="script.js"></script>
