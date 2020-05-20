@@ -9,7 +9,7 @@
         
     </head>
     <body>
-        <h1>What's The Weather?</h1>
+        <h1 style="font-size:50px">What's The Weather?</h1>
 
         <div id="app">
             <select v-model="selected">
@@ -17,7 +17,8 @@
                         <option v-for="cast in forecasts" :value="cast">{{cast.name}}</option>
             </select>
             <br>
-            <strong>{{selected.name}}</strong>
+            <br>
+            <strong style="font-size:30px">{{selected.name}}</strong>
             <div v-for="forecast in hourForecasts" :value="forecast">
                 <br>
                 <img :src="getImgUrl(selected.reports[forecast].parameters[18].values[0])" v-bind:alt="selected.reports[forecast].parameters[18].values[0]">
