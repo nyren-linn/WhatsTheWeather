@@ -8,13 +8,17 @@
         
     </head>
     <body>
-<<<<<<< HEAD
-        <h1>What's The Weather?</h1>
+            
+        <div class="headerImage"> 
+                <h1 style="font-size:100px">What's The Weather?</h1>
+        </div>
+       
+        <div class="navbar">
+                <a href="#home">Start</a>
+                <a href="#news">Check the weather</a>
+                <a href="#contact">About us</a>
+        </div>
         
-=======
-        <h1 style="font-size:50px">What's The Weather?</h1>
-
->>>>>>> 4f5129b4072081af62b9ea29d8d4bc6d91147830
         <div id="app">
             <select v-model="selected">
                 <option value="">Select a city</option>
@@ -45,6 +49,7 @@
                 <br>
             </div>
         </div>
+    
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script src="script.js"></script>
     </body>
