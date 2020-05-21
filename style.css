@@ -20,9 +20,12 @@ th, td {
 .headerImage {
     max-width: 100%;
     height: 400px;
-    background-image: url('https://quizizz.com/_media/quizzes/07d89f06-b80b-4f9a-8dd8-872d04abaa45_400_400');
+    background-image: url('https://store.api.pelmorex.com/static/media/TWNHeroBanner.578042f0.jpg');
     background-size: 100% 100%;
-    border: 1px solid red;
+    border: 1px solid linen;
+    font-style: italic;
+    font-size: small;
+
   }
 
 .navbar {
