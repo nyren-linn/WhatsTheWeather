@@ -31,7 +31,7 @@
                 <br>
                 <img :src="getImgUrl(selected.reports[forecast].parameters[18].values[0])" v-bind:alt="selected.reports[forecast].parameters[18].values[0]">
                 <br>
-                <strong>{{selected.reports[forecast].validTime}}</strong>
+                <strong>{{formatTime(formatDate(selected.reports[forecast].validTime))}}</strong>
                 <br>
                 
                 <table>
