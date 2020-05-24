@@ -7,8 +7,8 @@ new Vue({
         {name:"Linköping", lng:15.67000, lat:58.38000},{name:"Malmö", lng:13.00073, lat:55.60587},{name:"Stockholm", lng:18.0649, lat:59.33258},
         {name:"Upplands Väsby och Sollentuna", lng:17.94000, lat:59.43000},{name:"Uppsala", lng:17.70000, lat:59.87000},{name:"Västerås", lng:16.55000, lat:59.60000},
         {name:"Örebro", lng:15.18000, lat:59.28000}],
-    selected: ''
-
+    selected: '',
+    selectedHour: ''
   },
   created(){
     for(let i=0; i<this.pos.length; i++){

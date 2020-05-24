@@ -26,26 +26,34 @@
             </select>
             <br>
             <br>
+            <!-- <div v-for="hour in hourForecasts" :value="hour"> -->
+                <select v-model="selectedHour">
+                    <option value="">Select a time</option>
+                    <option v-for="hour in hourForecasts" :value="hour">{{hour}}</option>
+                </select>
+            <br>
             <strong style="font-size:30px">{{selected.name}}</strong>
-            <div v-for="forecast in hourForecasts" :value="forecast">
+            <strong>{{selectedHour}}</strong>
+            <div v-if="typeof(selectedHour) === 'number'">
+                <!-- <strong>HALLEFUCKINGLUJAH!!!!!</strong> -->
                 <br>
-                <img :src="getImgUrl(selected.reports[forecast].parameters[18].values[0])" v-bind:alt="selected.reports[forecast].parameters[18].values[0]">
+                <img :src="getImgUrl(selected.reports[selectedHour].parameters[18].values[0])" v-bind:alt="selected.reports[selectedHour].parameters[18].values[0]">
                 <br>
-                <strong>{{selected.reports[forecast].validTime}}</strong>
+                <!-- <strong>{{selected.reports[hour].validTime}}</strong> -->
                 <br>
                 
-                <table>
+                <!-- <table v-if="hour !== null">
                     <tr>
                         <th>Degrees</th>
                         <th>Wind speed</th>
                         <th>Precipitation</th>
                     </tr>
                     <tr>
-                        <td>{{selected.reports[forecast].parameters[1].values[0]}} C</td>
-                        <td>{{selected.reports[forecast].parameters[11].values[0]}} m/s</td>
-                        <td>{{selected.reports[forecast].parameters[12].values[0]}} - {{selected.reports[forecast].parameters[13].values[0]}}  mm/h</td>
+                        <td>{{selected.reports[hour].parameters[1].values[0]}} C</td>
+                        <td>{{selected.reports[hour].parameters[11].values[0]}} m/s</td>
+                        <td>{{selected.reports[hour].parameters[12].values[0]}} - {{selected.reports[hour].parameters[13].values[0]}}  mm/h</td>
                     </tr>
-                </table>
+                </table> -->
                 <br>
             </div>
         </div>
