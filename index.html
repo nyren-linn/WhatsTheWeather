@@ -9,17 +9,20 @@
     </head>
     <body>
         
-        
         <div class="headerImage"> 
                 <h1 style="font-size:100px">What's The Weather?</h1>
         </div>
-        <div class="navbar">
-                <a href="#start">Start</a>
-                <a href="#weather">Check the weather</a>
-                <a href="#aboutUs">About us</a>
-        </div>
         
         <div id="app">
+            <div class="navbar">
+                <nav>
+                    <router-link to="/">Start</router-link>
+                    <router-link to="/weather">Check the weather</router-link>
+                    <router-link to="/about">About us</router-link>
+                </nav>
+            </div>
+            <router-view></router-view>
+            <br>
             <select v-model="selected">
                 <option value="">Select a city</option>
                 <option v-for="cast in forecasts" :value="cast">{{cast.name}}</option>

@@ -1,5 +1,26 @@
+let Start = Vue.component('start', {
+template: `<strong>HEJ PÅ DIG!!! </strong>`
+})
+
+let Weather = Vue.component('weather', {
+  template: `<strong>HÄR ÄR VÄDRET</strong>`
+})
+
+let About = Vue.component('about', {
+  template: `<strong>VI ÄR COOLA</strong>`
+})
+
+let router = new VueRouter({
+  routes: [
+    { component: Start, path: '/' }, 
+    { component: Weather, path: '/weather' }, 
+    { component: About, path: '/about' }
+  ]
+})
+
 new Vue({
   el: '#app',
+  router: router,
   data: {
     forecasts:[],
     hourForecasts:[0,1,2,3,5,6,7,8,9,10,11,12], //sätta 0-70?
