@@ -39,7 +39,7 @@
                 <br>
                 <img :src="getImgUrl(selected.reports[selectedHour].parameters[18].values[0])" v-bind:alt="selected.reports[selectedHour].parameters[18].values[0]">
                 <br>
-                <!-- <strong>{{selected.reports[hour].validTime}}</strong> -->
+                <strong>{{formatTime(formatDate(selected.reports[selectedHour].validTime))}}</strong>
                 <br>
                 
                 <!-- <table v-if="hour !== null">
@@ -57,8 +57,9 @@
                 <br>
             </div>
         </div>
-    
+        
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

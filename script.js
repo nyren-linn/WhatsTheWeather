@@ -29,8 +29,12 @@ new Vue({
     getImgUrl(pet) {
       let url = "https://www.smhi.se/tendayforecast/images/WPT-icons/weathersymbols/80x60/day/" + pet +".png?v=1550503846134&proxy=wpt-abc"
       return url
+    },
+    formatDate(date) {
+      return date.replace("T", " kl: ")
+    },
+    formatTime(time) {
+      return time.replace(":00:00Z", " ")
     }
-    
-    
   }
 })
