@@ -35,11 +35,12 @@ let Weather = Vue.component('weather', {
       let url = "https://www.smhi.se/tendayforecast/images/WPT-icons/weathersymbols/80x60/day/" + pet +".png?v=1550503846134&proxy=wpt-abc"
       return url
     },
-    formatDate(date) {
-      return date.replace("T", " kl: ")
-    },
-    formatTime(time) {
-      return time.replace(":00:00Z", " ")
+    formatDateTime(timestamp){
+      let date = new Date(timestamp)
+      let day = date.getDate();
+      let month = date.getMonth()
+      let hour = date.getHours() <10 ? "0"+date.getHours() : date.getHours(); //Switch sats samma som en if sats, är påståendet sant väljd första alternativet, annars andra.
+      return day+"/"+month +" kl. "+hour+":00"
     }
   },
   
@@ -62,7 +63,7 @@ let Weather = Vue.component('weather', {
                 <br>
                 <img :src="getImgUrl(selected.reports[selectedHour].parameters[18].values[0])" v-bind:alt="selected.reports[selectedHour].parameters[18].values[0]">
                 <br>
-                <strong>{{formatTime(formatDate(selected.reports[selectedHour].validTime))}}</strong>
+                <strong>{{formatDateTime(selected.reports[selectedHour].validTime)}}</strong>
                 <br>
                 
                 <table>
