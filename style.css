@@ -5,6 +5,14 @@ body {
     position: relative;
     text-align: center;
 }
+p {
+    display: block;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-left: 0;
+    margin-right: 0;
+    text-indent: 30px;
+  }
 
 table, th, td {
     border-collapse: collapse;

@@ -1,11 +1,12 @@
 let Start = Vue.component('start', {
 template: `
 <div class="start">
-  <strong>Kul att du har hittat hit!! </strong>
-  <div class="startText">
-    Hos oss kan du får reda på det senaste vädret i tio av Sveriges största städer.
-  </div>
+  <p><strong> Welcome! We're happy that you found us! </strong></p>
+    In this web application you can find out the latest <br>
+    weather forecasts in ten of Sweden's largest cities. Enjoy!
+  <p>
   <img src="https://media.giphy.com/media/U32hN2EPpgEzS/giphy.gif" alt="SummerGif">
+  </p>
 </div>`
 })
 
@@ -51,6 +52,7 @@ let Weather = Vue.component('weather', {
   
   template: `
   <div class="weather">
+  <strong> Choose city and time for weather forecast </strong>
   <br>
             <select v-model="selected">
                 <option value="">Select a city</option>
@@ -94,7 +96,11 @@ let Weather = Vue.component('weather', {
 })
 
 let About = Vue.component('about', {
-  template: `<strong>VI ÄR COOLA</strong>`
+  template: `
+  <div class="about">
+  <p><strong>This web application is created by Linn Nyrén and Louise Ahlqvist.</strong></p>
+  <p> To contact us feel free to send email <a href="mailto:contact@whatstheweather.com">HERE</a>.</p>
+  </div>`
 })
 
 let router = new VueRouter({
