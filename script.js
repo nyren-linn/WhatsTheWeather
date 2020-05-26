@@ -1,5 +1,12 @@
 let Start = Vue.component('start', {
-template: `<strong>HEJ PÅ DIG!!! </strong>`
+template: `
+<div class="start">
+  <strong>Kul att du har hittat hit!! </strong>
+  <div class="startText">
+    Hos oss kan du får reda på det senaste vädret i tio av Sveriges största städer.
+  </div>
+  <img src="https://media.giphy.com/media/U32hN2EPpgEzS/giphy.gif" alt="SummerGif">
+</div>`
 })
 
 let Weather = Vue.component('weather', {
