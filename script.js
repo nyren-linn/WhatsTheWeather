@@ -95,11 +95,11 @@ let Weather = Vue.component('weather', {
   </div>`
 })
 
-let About = Vue.component('about', {
+let Contact = Vue.component('contact', {
   template: `
-  <div class="about">
+  <div class="contact">
   <p><strong>This web application is created by Linn Nyrén and Louise Ahlqvist.</strong></p>
-  <p> To contact us feel free to send email <a href="mailto:contact@whatstheweather.com">HERE</a>.</p>
+  <p> Feel free to contact us <a href="mailto:contact@whatstheweather.com">HERE</a>.</p>
   </div>`
 })
 
@@ -107,7 +107,7 @@ let router = new VueRouter({
   routes: [
     { component: Start, path: '/' }, 
     { component: Weather, path: '/weather' }, 
-    { component: About, path: '/about' }
+    { component: Contact, path: '/contact' }
   ]
 })
 
