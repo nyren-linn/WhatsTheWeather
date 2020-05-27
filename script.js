@@ -5,7 +5,7 @@ template: `
     In this web application you can find out the latest <br>
     weather forecasts in ten of Sweden's largest cities. Enjoy!
   <p>
-  <img src="https://media.giphy.com/media/U32hN2EPpgEzS/giphy.gif" alt="SummerGif">
+    <img src="https://media.giphy.com/media/U32hN2EPpgEzS/giphy.gif" alt="SummerGif" class="SummerGif">
   </p>
 </div>`
 })
@@ -52,54 +52,53 @@ let Weather = Vue.component('weather', {
   
   template: `
   <div class="weather">
-  <strong> Choose city and time for weather forecast </strong>
-  <br>
-            <select v-model="selected">
-                <option value="">Select a city</option>
-                <option v-for="cast in forecasts" :value="cast">{{cast.name}}</option>
-            </select>
-            <br>
-            <br>
-            <select v-model="selectedReport">
-                <option value="">Select a time</option>
-                <option v-for="obj in selected.reports" :value="obj">
-                    {{formatDateTime(obj.validTime)}}
-                </option>
-            </select>
-            <br>
+    <p>
+      <strong> Choose city and time for weather forecast </strong>
+    </p>
+    <p>
+      <select v-model="selected" class="selectCity">
+        <option value="">Select a city</option>
+        <option v-for="cast in forecasts" :value="cast">{{cast.name}}</option>
+      </select>
+    
+      <select v-model="selectedReport" class="selectTime">
+        <option value="">Select a time</option>
+        <option v-for="obj in selected.reports" :value="obj">
+            {{formatDateTime(obj.validTime)}}
+        </option>
+      </select>
+    </p>  
             
-            <div v-if="typeof(selectedReport)==='object'">
-                <strong style="font-size:30px">{{selected.name}}</strong>
-                <br>
-                <img :src="getImgFromObjectUrl()">
-                <br>
-                <strong>{{formatDateTime(selectedReport.validTime)}}</strong>
-                <br>
-                
-                <table>
-                    <tr>
-                        <th>Degrees</th>
-                        <th>Wind speed</th>
-                        <th>Precipitation</th>
-                    </tr>
-                    <tr>
-                        <td>{{selectedReport.parameters[11].values[0]}} C</td>
-                        <td>{{selectedReport.parameters[17].values[0]}} m/s</td>
-                        <td>{{selectedReport.parameters[2].values[0]}} - {{selectedReport.parameters[4].values[0]}}  mm/h</td>
-                    </tr>
-                </table>
-
-                <br>
-
-            </div>
+    <div v-if="typeof(selectedReport)==='object'">
+      <strong style="font-size:30px">{{selected.name}}</strong>
+      <br>
+      <img :src="getImgFromObjectUrl()">
+      <br>
+      <strong>{{formatDateTime(selectedReport.validTime)}}</strong>
+      
+      <table>
+        <tr>
+          <th>Degrees</th>
+          <th>Wind speed</th>
+          <th>Precipitation</th>
+        </tr>
+        <tr>
+          <td>{{selectedReport.parameters[11].values[0]}} C</td>
+          <td>{{selectedReport.parameters[17].values[0]}} m/s</td>
+          <td>{{selectedReport.parameters[2].values[0]}} - {{selectedReport.parameters[4].values[0]}}  mm/h</td>
+        </tr>
+      </table>
+    </div>
   </div>`
 })
 
 let Contact = Vue.component('contact', {
   template: `
   <div class="contact">
-  <p><strong>This web application is created by Linn Nyrén and Louise Ahlqvist.</strong></p>
-  <p> Feel free to contact us <a href="mailto:contact@whatstheweather.com">HERE</a>.</p>
+    <p>
+      <strong>This web application is created by Linn Nyrén and Louise Ahlqvist.</strong>
+    </p>
+    <p> Feel free to contact us <a href="mailto:contact@whatstheweather.com">HERE</a>.</p>
   </div>`
 })
 

@@ -8,20 +8,23 @@
         
     </head>
     <body>
-        
         <div class="headerImage"> 
-                <h1 style="font-size:100px">What's The Weather?</h1>
+            <h1 style="font-size:100px">What's The Weather?</h1>
         </div>
         
         <div id="app">
             <div class="navbar">
-                <nav>
-                    <router-link to="/">Start</router-link>
-                    <router-link to="/weather">Check the weather</router-link>
-                    <router-link to="/contact">Contact</router-link>
-                </nav>
-            </div>
-            <router-view></router-view>
+                
+                    <nav>
+                        <router-link to="/" class="start">Start</router-link>
+                        <router-link to="/weather" class="weather">Check the weather</router-link>
+                        <router-link to="/contact" class="contact">Contact</router-link>
+                    </nav>
+                </div>
+            
+            
+                <router-view></router-view>
+            
             <!-- <br>
             <select v-model="selected">
                 <option value="">Select a city</option>

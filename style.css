@@ -4,7 +4,18 @@ body {
     background-color: lightskyblue;
     position: relative;
     text-align: center;
+    display: grid;
 }
+
+
+
+.SummerGif{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
 p {
     display: block;
     margin-top: 3em;
@@ -55,3 +66,26 @@ th, td {
     background: #ddd;
     color: black;
 }
+
+.selectCity{
+    background-color: whitesmoke;
+    border: 2px solid  #333;
+}
+
+.selectTime{
+    background-color: whitesmoke;
+    border: 2px solid  #333;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .start{
+        width: 100%;
+    }
+    .weather{
+        width: 100%;
+    }
+    .contact{
+        width: 100%;  
+    }
+  }
